@@ -1,0 +1,14 @@
+datasources:
+  default:
+    url: jdbc:tc:postgresql:12:///postgres
+    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+#r2dbc:
+#  datasources:
+#    default:
+#      url: r2dbc:tc:postgresql:///postgres
+
+flyway:
+  datasources:
+    default:
+      enabled: true

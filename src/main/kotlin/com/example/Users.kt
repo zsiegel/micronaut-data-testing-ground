@@ -20,7 +20,7 @@ data class User(
 
 @Transactional
 @JdbcRepository
-interface SyncUserRepo : CrudRepository<User, UUID> {
+interface CrudUserRepo : CrudRepository<User, UUID> {
 
     fun findByEmail(email: String): User?
 
@@ -28,7 +28,7 @@ interface SyncUserRepo : CrudRepository<User, UUID> {
 
 @Transactional
 @JdbcRepository
-interface SyncWithSuspendRepo : CrudRepository<User, UUID> {
+interface CrudSuspendRepo : CrudRepository<User, UUID> {
 
     suspend fun findByEmail(email: String): User?
 
@@ -36,15 +36,8 @@ interface SyncWithSuspendRepo : CrudRepository<User, UUID> {
 
 @Transactional
 @JdbcRepository
-interface SuspendUserRepo : CoroutineCrudRepository<User, UUID> {
+interface CoroutineUserRepo : CoroutineCrudRepository<User, UUID> {
 
     suspend fun findByEmail(email: String): User?
 
 }
-
-//@R2dbcRepository
-//interface AsyncUserRepo : CoroutineCrudRepository<User, UUID> {
-//
-//    suspend fun findByEmail(email: String): User?
-//
-//}
